@@ -1,9 +1,15 @@
 from src.adult import Adult
 from src.compass import Compass
+from src.synthetic import Synthetic
 from src.helpers import *
 #suppress warnings
 import warnings
 warnings.filterwarnings("ignore")
+
+
+syn_ob = Synthetic()
+idx_1,idx_2,all_shap = syn_ob.run_pair()
+syn_ob.plot(idx_1,idx_2,all_shap)
 
 df=load_compass_data()
 original_df,df = label_enocde(df)
