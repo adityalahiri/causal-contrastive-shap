@@ -88,7 +88,9 @@ def load_adult_income_dataset(only_train=True):
 
 def load_compass_data():
     # Load the dataset
-    data = pd.read_csv('../data/compas-scores-two-years.csv')
+    import os
+    path=os.path.join(os.getcwd(),"data/compas-scores-two-years.csv")
+    data = pd.read_csv(path)
 
     # Choose the columns you want to use for training
     # These might not be the right columns for your specific use case
